@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+  <form method="POST" enctype="application/x-www-form-urlencoded" id="form1">
+    <div class="container d-flex justify-content-center">
+      <div>
+        <div id="myDIV">
+          <div>
+            <label class="text-muted pb-2" for="selectNumbers" style="margin-top: 50%;">Select Numbers To Send</label>
+          </div>
+          <div class="table-wrapper-scroll-y my-custom-scrollbar">
+            <table class="table table-bordered mb-0" id="empTable">
+
+            </table>
+          </div>
+          <div>
+            <button class="my-2 btn btn-primary white-text" type="button" data-toggle="modal"
+              data-target="#exampleModal">Add
+              new
+              phone
+              number</button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title " id="exampleModalLabel">Add New Phone Number</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="form-group">
+                        <label for="contactName" class="col-form-label">Contact Name</label>
+                        <input type="text" class="form-control" autocomplete="off" id="contactName">
+                      </div>
+                      <div class="form-group">
+                        <label for="phoneNumber" class="col-form-label">Phone Number</label>
+                        <input type="text" class="form-control" autocomplete="off" id="phoneNumber">
+                      </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" id="addARow" onclick="addToTable()">Add</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <input tabindex="2" type="button" value="Next" onclick="myFunction(),showChecked()"
+              class="btn btn-success w-100" data-toggle="collapse" aria-controls="multiCollapseExample"
+              data-target="#multiCollapseExample" aria-expanded="false" aria-controls="multiCollapseExample">
+          </div>
+        </div>
+        <div id="myDiv2">
+          <div>
+            <label class="text-muted pb-2" for="messageTemplate" style="margin-top: 50%;">Message Template</label>
+          </div>
+          <div>
+            <textarea tabindex="1" value="messageTemplate" name="messageTemplate" id="mesTe"
+              class="textarea form-control mw-100" rows="5"></textarea>
+          </div>
+          <div>
+            <p class="text-info" id="checkValue"></p>
+          </div>
+          <div>
+            <input tabindex="2" type="button" onclick="send()" value="Send" class="btn btn-success w-100">
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </form>
+  <div>
+
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+    crossorigin="anonymous"></script>
+  <script src="js.js"></script>
+</body>
+
+</html>
