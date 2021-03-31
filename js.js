@@ -27,7 +27,7 @@ function addToTable() {
   conName = "";
 }
 
-
+/*
 showChecked();
 function showChecked() {
   document.getElementById("checkValue").textContent =
@@ -40,20 +40,20 @@ document.querySelectorAll("input[name=chk]").forEach((i) => {
     showChecked();
   };
 });
-
-/*
-//Getting all selected checkboxes
-let inputs = document.getElementsByTagName("input");
-let checked = []; //will contain all checked checkboxes
-// use forEach for looping
-for (let i = 0; i < inputs.length; i++) { 
-    if (inputs[i].checked) {
-      checked.push(inputs[i]);
-    }
-  }
-let nbChecked = checked.length; //number of checked checkboxes
-document.getElementById("checkValue").innerText="Selected phone numbers are : " + nbChecked +" Numbers";
 */
+
+//Count the number of checkboxes
+
+var array = []; //will contain all checkboxes
+var checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
+
+for (var i = 0; i < checkboxes.length; i++) {
+  array.push(checkboxes[i].value)
+}
+let nbCheck=array.length;   //number of checkboxes
+document.getElementById("checkValue").innerText="Selected phone numbers are : " + nbChecked +" Numbers";
+
+
 
 function send() {
   const data = {
