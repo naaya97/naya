@@ -44,15 +44,15 @@ document.querySelectorAll("input[name=chk]").forEach((i) => {
 
 //Count the number of checkboxes
 
-let array = []; //will contain all checkboxes
+
+let array = []; //will contain all checked checkboxes
 let checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
 
 for (let i = 0; i < checkboxes.length; i++) {
   array.push(checkboxes[i].value)
 }
-let nbCheck=array.length;   //number of checkboxes
-document.getElementById("checkValue").innerText="Selected phone numbers are : " + nbChecked +" Numbers";
-
+let nbcheck=array.length;   //number of checked checkboxes
+document.getElementById("checkValue").innerHTML="Selected phone numbers are : " + nbcheck +" Numbers";
 
 
 function send() {
@@ -73,7 +73,7 @@ function send() {
 }
 
 
-// starting Mood code
+
 
 const addARowBtn = document.querySelector("#addARow");
 // adding event on adding elements to table's row
