@@ -42,8 +42,8 @@ document.querySelectorAll("input[name=chk]").forEach((i) => {
 });
 */
 
-//Count the number of checkboxes
-
+//Count the number of checked checkboxes
+/*
 
 let array = []; //will contain all checked checkboxes
 let checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
@@ -55,6 +55,10 @@ for (let i = 0; i < checkboxes.length; i++) {
 }
 let nbcheck=array.length;   //number of checked checkboxes
 document.getElementById("checkValue").innerHTML="Selected phone numbers are : " + nbcheck +" Numbers";
+*/
+
+  let checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+  document.getElementById("checkValue").innerHTML="Selected phone numbers are : " + checkboxes.length +" Numbers";
 
 
 
