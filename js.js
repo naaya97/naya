@@ -7,7 +7,7 @@ function addToTable() {
   let cell2 = newRow.insertCell(1);
   // cell2.innerText = conName + "\n" + phNumber;
 
-  // adding new element to the cell by MooD
+  // adding new element to the cell
   let cellContact = document.createElement("h5");
   let cellNum = document.createElement("p");
   cellContact.innerHTML = conName;
@@ -49,10 +49,13 @@ let array = []; //will contain all checked checkboxes
 let checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
 
 for (let i = 0; i < checkboxes.length; i++) {
+  if(checkboxes.checked){
   array.push(checkboxes[i].value)
+  }
 }
 let nbcheck=array.length;   //number of checked checkboxes
 document.getElementById("checkValue").innerHTML="Selected phone numbers are : " + nbcheck +" Numbers";
+
 
 
 function send() {
