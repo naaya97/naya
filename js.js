@@ -27,61 +27,6 @@ function addToTable() {
   conName = "";
 }
 
-/*
-showChecked();
-function showChecked() {
-  document.getElementById("checkValue").textContent =
-    "Selected phone numbers are : " +
-    document.querySelectorAll("input:checked").length +
-    " Numbers";
-}
-document.querySelectorAll("input[name=chk]").forEach((i) => {
-  i.onclick = function () {
-    showChecked();
-  };
-});
-*/
-
-//Count the number of checked checkboxes
-/*
-
-let array = []; //will contain all checked checkboxes
-let checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
-
-for (let i = 0; i < checkboxes.length; i++) {
-  if(checkboxes.checked){
-  array.push(checkboxes[i].value)
-  }
-}
-let nbcheck=array.length;   //number of checked checkboxes
-document.getElementById("checkValue").innerHTML="Selected phone numbers are : " + nbcheck +" Numbers";
-*/
-
-  let checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
-  document.getElementById("checkValue").innerHTML="Selected phone numbers are : " + checkboxes.length +" Numbers";
-
-
-
-function send() {
-  const data = {
-    phoneNumbers: infoArr ,
-    messageTemplate: document.getElementById("mesTe").value,
-  };
-  const jsonStr = JSON.stringify(data);
-  const xhttp = new XMLHttpRequest();
-  xhttp.open(
-    "POST",
-    "https://601bf66d1a9c22001706003a.mockapi.io/api/test/sms",
-    true
-  );
-  xhttp.setRequestHeader("Content-Type", "application/json");
-  xhttp.send(jsonStr);
-  console.log(jsonStr);
-}
-
-
-
-
 const addARowBtn = document.querySelector("#addARow");
 // adding event on adding elements to table's row
 
@@ -96,8 +41,8 @@ addARowBtn.addEventListener("click", (e) => {
     checked: false,
     elementIndex: null,
   };
-  infoArr.push(arrVals);
-
+ 
+  infoArr.push(arrVals);  
   // adding the array to localStorage
   localStorage.setItem("rows", JSON.stringify(infoArr));
   // getting the final result
@@ -120,3 +65,30 @@ addARowBtn.addEventListener("click", (e) => {
     });
   });
 });
+
+
+//Count the number of checked checkboxes
+
+document.getElementById('select').onclick = function() {
+  var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+  
+  document.getElementById('checkValue').innerHTML="Selected phone numbers are : " +checkboxes.length+" Numbers";
+}
+
+
+function send() {
+  const data = {
+    phoneNumbers: infoArr ,
+    messageTemplate: document.getElementById("mesTe").value,
+  };
+  const jsonStr = JSON.stringify(data);
+  const xhttp = new XMLHttpRequest();
+  xhttp.open(
+    "POST",
+    "https://601bf66d1a9c22001706003a.mockapi.io/api/test/sms",
+    true
+  );
+  xhttp.setRequestHeader("Content-Type", "application/json");
+  xhttp.send(jsonStr);
+  console.log(jsonStr);
+}
