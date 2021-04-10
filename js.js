@@ -44,7 +44,7 @@ addARowBtn.addEventListener("click", (e) => {
   };
 
   infoArr.push(arrVals);
-
+ 
 
 
   // adding the array to localStorage
@@ -56,7 +56,7 @@ addARowBtn.addEventListener("click", (e) => {
   $("#exampleModal").modal("hide");
 
   // defining checkboxes
-  const checkBox = document.querySelectorAll(".checkBox");
+  const checkBox = document.querySelectorAll(".checkBox:checked");
   checkBox.forEach((el, i) => {
       el.addEventListener("change", (e) => {
       console.log(infoArr[i].checked);
