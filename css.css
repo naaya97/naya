@@ -6,6 +6,10 @@
     .table-wrapper-scroll-y {
         display: block;
         }
-        .le{
-            text-align: right;
+        
+        .unshow {
+            display: none;
+        }
+        .show {
+            display: block;
         }

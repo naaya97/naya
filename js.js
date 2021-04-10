@@ -32,6 +32,7 @@ const addARowBtn = document.querySelector("#addARow");
 
 // adding the array that we are gonna to push elemnts into
 const infoArr = [];
+
 addARowBtn.addEventListener("click", (e) => {
   let phNumber = document.getElementById("phoneNumber").value;
   let conName = document.getElementById("contactName").value;
@@ -41,8 +42,11 @@ addARowBtn.addEventListener("click", (e) => {
     checked: false,
     elementIndex: null,
   };
- 
-  infoArr.push(arrVals);  
+
+  infoArr.push(arrVals);
+
+
+
   // adding the array to localStorage
   localStorage.setItem("rows", JSON.stringify(infoArr));
   // getting the final result
@@ -68,12 +72,21 @@ addARowBtn.addEventListener("click", (e) => {
 
 
 //Count the number of checked checkboxes
+//show && unshow
 
 document.getElementById('select').onclick = function() {
-  var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+  let cl = document.getElementById('myDIV') 
+  cl.classList.remove('show')
+  cl.classList.add('unshow')
+  let cl2 = document.getElementById('myDiv2')
+  cl2.classList.remove('unshow')
+  cl2.classList.add('show')
+
+ let checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
   
   document.getElementById('checkValue').innerHTML="Selected phone numbers are : " +checkboxes.length+" Numbers";
 }
+
 
 
 function send() {
@@ -92,3 +105,9 @@ function send() {
   xhttp.send(jsonStr);
   console.log(jsonStr);
 }
+
+
+
+
+
+
